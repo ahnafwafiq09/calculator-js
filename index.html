@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <meta
+      name="description"
+      content="A Calculator with all the functionalities"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="CSS/normalize.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="calculator">
+        <div>
+          <div class="display" id="display"></div>
+        </div>
+        <div>
+          <div class="btn-div-1">
+            <button onclick = allClear() type="button" class="calcu-btn" id="AC" disabled>AC</button>
+            <button onclick="DeLete()" type="button" class="calcu-btn" id="DE" disabled>DE</button>
+            <button onclick="addPoint()" type="button" class="calcu-btn" id="point">.</button>
+            <button onclick="addFunc('divide')" type="button" class="calcu-btn" id="divide" disabled>/</button>
+          </div>
+          <div>
+            <button onclick = addNumber(7) type="button" class="calcu-btn" id="seven">7</button>
+            <button onclick = addNumber(8) type="button" class="calcu-btn" id="eight">8</button>
+            <button onclick = addNumber(9) type="button" class="calcu-btn" id="nine">9</button>
+            <button onclick="addFunc('multiply')" type="button" class="calcu-btn" id="multiply" disabled>*</button>
+          </div>
+          <div>
+            <button onclick = addNumber(4) type="button" class="calcu-btn" id="four">4</button>
+            <button onclick = addNumber(5) type="button" class="calcu-btn" id="five">5</button>
+            <button onclick = addNumber(6) type="button" class="calcu-btn" id="six">6</button>
+            <button onclick="addFunc('minus')" type="button" class="calcu-btn" id="minus" disabled>-</button>
+          </div>
+          <div>
+            <button onclick = addNumber(3) type="button" class="calcu-btn" id="three">3</button>
+            <button onclick = addNumber(2) type="button" class="calcu-btn" id="two">2</button>
+            <button onclick = addNumber(1) type="button" class="calcu-btn" id="one" >1</button>
+            <button onclick = "addFunc('plus')" type="button" class="calcu-btn" id="plus" disabled>+</button>
+          </div>
+          <div>
+            <button onclick="addLeftBrac()" type="button" class="calcu-btn" id="leftbrc">(</button>
+            <button onclick = addNumber(0) type="button" class="calcu-btn" id="zero" disabled>0</button>
+            <button onclick="addRightBrac()" type="button" class="calcu-btn" id="rightbrc" disabled>)</button>
+            <button onclick="equal()" type="button" class="calcu-btn" id="equals" disabled>=</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
