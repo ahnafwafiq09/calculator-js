@@ -34,25 +34,45 @@ function disableStuff(){
 function allClear() {
     display.innerHTML = ""
     disableStuff()
+    leftBracCount = 0;
 }
 function DeLete() {
     const curVal = display.innerHTML;
     if (curVal.length > 0) {
         display.innerHTML = curVal.slice(0, -1)
+    }
     const newCurVal = display.innerHTML;
     if (newCurVal == '') {
         disableStuff()
+        leftBracCount = 0;
         }
-    }
     if (curVal[(curVal.length - 1)] == '.') {
         document.getElementById("point").removeAttribute('disabled')
+    }
+    if (curVal[(curVal.length - 1)] == '(') {
+        leftBracCount -= 1;
+    }
+    if (newCurVal[(newCurVal.length - 2)] == '*') {
+        stuffWhenFuncAdd()
+    }
+    if (newCurVal[(newCurVal.length - 2)] == '+') {
+        stuffWhenFuncAdd()
+    }
+    if (newCurVal[(newCurVal.length - 2)] == '-') {
+        stuffWhenFuncAdd()
+    }
+    if (newCurVal[(newCurVal.length - 2)] == '/') {
+        stuffWhenFuncAdd()
+    }
+    if (leftBracCount == 0){
+        document.getElementById("rightbrc").setAttribute('disabled', '')
     }
 }
 function addPoint() {
     display.innerHTML += ".";
     document.getElementById("point").setAttribute('disabled', '')
 }
-function addFunc(funcName) {
+function stuffWhenFuncAdd() {
     document.getElementById("equals").setAttribute('disabled', '')
     document.getElementById("plus").setAttribute('disabled', '')
     document.getElementById("minus").setAttribute('disabled', '')
@@ -64,6 +84,9 @@ function addFunc(funcName) {
     if (leftBracCount !== 0) {
         document.getElementById("equals").setAttribute('disabled', '')
     }
+}
+function addFunc(funcName) {
+    stuffWhenFuncAdd()
     if (funcName == 'plus') {
         display.innerHTML += " + "
     }
@@ -86,8 +109,6 @@ function addLeftBrac() {
     if (leftBracCount !== 0) {
         document.getElementById("equals").setAttribute('disabled', '')
     }
-    const curValue = display.innerHTML;
-    let charAtPos = curValue.charAt[curValue.length - 1]
     display.innerHTML += ' ( '
     
 }
