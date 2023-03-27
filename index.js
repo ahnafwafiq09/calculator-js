@@ -71,6 +71,9 @@ function DeLete() {
 function addPoint() {
     display.innerHTML += ".";
     document.getElementById("point").setAttribute('disabled', '')
+    document.getElementById("zero").removeAttribute('disabled')
+    document.getElementById("AC").removeAttribute('disabled')
+    document.getElementById("DE").removeAttribute('disabled')
 }
 function stuffWhenFuncAdd() {
     document.getElementById("equals").setAttribute('disabled', '')
