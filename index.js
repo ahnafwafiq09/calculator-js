@@ -52,6 +52,9 @@ function DeLete() {
     if (curVal[(curVal.length - 1)] == '(') {
         leftBracCount -= 1;
     }
+    if (curVal[(curVal.length - 1)] == ')') {
+        leftBracCount += 1;
+    }
     if (newCurVal[(newCurVal.length - 2)] == '*') {
         stuffWhenFuncAdd()
     }
