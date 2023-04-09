@@ -1,3 +1,7 @@
+// Copyright ©2023 Ahnaf Wafiq. All Rights Reserved
+// Use of this code is allowed as long as you credit Ahnaf Wafiq
+
+
 const display = document.getElementById("display")
 let leftBracCount = 0;
 function addNumber(Number) {
